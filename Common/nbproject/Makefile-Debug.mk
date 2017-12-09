@@ -67,8 +67,8 @@ OBJECTFILES= \
 CFLAGS=`pkg-config --cflags freetype2` 
 
 # CC Compiler Flags
-CCFLAGS=`pkg-config --cflags ImageMagick++ freetype2 assimp` -fPIC 
-CXXFLAGS=`pkg-config --cflags ImageMagick++ freetype2 assimp` -fPIC 
+CCFLAGS=`pkg-config --cflags ImageMagick++ freetype2 assimp x11-xcb` -fPIC 
+CXXFLAGS=`pkg-config --cflags ImageMagick++ freetype2 assimp x11-xcb` -fPIC 
 
 # Fortran Compiler Flags
 FFLAGS=

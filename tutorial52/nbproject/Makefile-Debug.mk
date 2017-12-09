@@ -42,8 +42,8 @@ OBJECTFILES= \
 CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=`pkg-config --cflags glew ImageMagick++ assimp freetype2 fontconfig glfw3` 
-CXXFLAGS=`pkg-config --cflags glew ImageMagick++ assimp freetype2 fontconfig glfw3` 
+CCFLAGS=`pkg-config --cflags glew ImageMagick++ assimp freetype2 fontconfig glfw3 x11-xcb vulkan` 
+CXXFLAGS=`pkg-config --cflags glew ImageMagick++ assimp freetype2 fontconfig glfw3 x11-xcb vulkan` 
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -52,7 +52,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=../Common/dist/Debug/GNU-Linux/libcommon.a -lglut -lxcb -lvulkan -Wl,-rpath,'../CommonVulkan/dist/Debug/GNU-Linux' -L../CommonVulkan/dist/Debug/GNU-Linux -lCommonVulkan
+LDLIBSOPTIONS=../Common/dist/Debug/GNU-Linux/libcommon.a -lglut -Wl,-rpath,'../CommonVulkan/dist/Debug/GNU-Linux' -L../CommonVulkan/dist/Debug/GNU-Linux -lCommonVulkan
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -64,7 +64,7 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tutorial52: ../CommonVulkan/dist/Debu
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tutorial52: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tutorial52 ${OBJECTFILES} ${LDLIBSOPTIONS} `pkg-config --libs glew ImageMagick++ assimp freetype2 fontconfig gl glfw3`
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tutorial52 ${OBJECTFILES} ${LDLIBSOPTIONS} `pkg-config --libs glew ImageMagick++ assimp freetype2 fontconfig gl glfw3 x11-xcb vulkan`
 
 ${OBJECTDIR}/tutorial52.o: tutorial52.cpp
 	${MKDIR} -p ${OBJECTDIR}
